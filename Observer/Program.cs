@@ -4,6 +4,16 @@ namespace Observer
 {
     class Program
     {
+
+        /// <summary>
+        /// The two important key terms in the Observer pattern are the Subject and the Observer.
+        /// The Subject is the object which holds the value and takes responsibility in notifying the observers when the value is changed.
+        /// The subject could be a database change, property change or so.
+        /// 
+        /// The main perpose in the Observer pattern is notify the all connected object from subject .
+        /// </summary>
+        /// <param name="args"></param>
+
         static void Main(string[] args)
         {
             Subject subject = new Subject();

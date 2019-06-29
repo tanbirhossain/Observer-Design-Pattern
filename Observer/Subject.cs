@@ -4,31 +4,29 @@ namespace Observer
 {
     interface ISubject
     {
-        void Subscribe(Observer observer);
-        void Unsubscribe(Observer observer);
+        void Subscribe(IObserver observer);
+        void Unsubscribe(IObserver observer);
         void Notify();
     }
     class Subject : ISubject
     {
-        private List<Observer> observers = new List<Observer>();
+        private List<IObserver> observers = new List<IObserver>();
         private int _int;
         public int Inventory
         {
             get { return _int; }
             set
             {
-                if (value > _int)
-                {
-                    Notify();
-                }
+
+                Notify();
                 _int = value;
             }
         }
-        public void Subscribe(Observer observer)
+        public void Subscribe(IObserver observer)
         {
             observers.Add(observer);
         }
-        public void Unsubscribe(Observer observer)
+        public void Unsubscribe(IObserver observer)
         {
             observers.Remove(observer);
         }

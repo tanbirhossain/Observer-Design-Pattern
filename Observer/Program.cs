@@ -22,12 +22,12 @@ namespace Observer
             subject.Subscribe(observer1);
 
             //Observer2 also subscribes to the store
-            subject.Subscribe(new Observer("Observer 2"));
+            subject.Subscribe(new Observer2("Observer 2"));
             subject.Inventory++;
 
             //Observer1 unsubscribes and Observer3 subscribes to notification.
             subject.Unsubscribe(observer1);
-            subject.Subscribe(new Observer("Observer 3"));
+            subject.Subscribe(new Observer3("Observer 3"));
             subject.Inventory++;
             Console.ReadLine();
         }
